@@ -1,0 +1,53 @@
+
+<div class="panel panel-default" style="padding: 20px;">
+    <div class="panel-heading">Customer Infos</div>
+    <div class="panel-body">
+        <div class="row">
+            <form class="col-md-2 col-sm-3 col-xs-3 col-lg-2" ng-submit="getUserInfos()">
+                <div class="form-group">
+                    <label for="CustomerID">Customer Id</label>
+                    <input type="number"
+                           ng-model="customerID" class="form-control"
+                           id="CustomerID" placeholder="Customer Id">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+            <div class="row">
+                <div class="table-responsive col-md-offset-1 col-md-3 col-sm-offset-1 col-sm-4  col-xs-4 col-lg-3 " style="margin-top: 10px;">
+
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>First Name</th>
+                            <td>{{customer.firstName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td>{{customer.lastName}}</td>
+                        </tr>
+                        <tr>
+                            <th>Balance</th>
+                            <td>{{customer.balance}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 15px; ">
+            <h5 style="font-weight: bold" >Transactions</h5>
+                <ul>
+                    <li ng-repeat="transaction in customer.transactions">
+                        Account Id: {{transaction.accountID}}
+                        |  Initial Credit: {{transaction.money}}
+                        |  Date: {{transaction.currentDate}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p style="margin-left: 20px; margin-top: 20px;">
+                {{error.data.message}}</p>
+        </div>
+    </div>
+</div>
