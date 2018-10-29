@@ -1,7 +1,9 @@
 Instructions how to execute the source code
 
 1)Open the project
+
 2)Run the BankSystemApplication
+
 3)Open a browser and paste localhost:8080
 
 The existing users are:
